@@ -17,7 +17,7 @@ expect class StringBuilder {
     fun append(value: CharSequence?, startIndex: Int, endIndex: Int): StringBuilder {
     //...
 ```
-2) And we have extension function:
+2) And extension function:
 ```kotlin
 fun StringBuilder.append(vararg value: Any?): StringBuilder
 ```
