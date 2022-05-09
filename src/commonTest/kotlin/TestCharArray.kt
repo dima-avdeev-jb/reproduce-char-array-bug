@@ -12,17 +12,4 @@ class TestCharArray {
         assertEquals("a", stringBuilder.toString())
     }
 
-    @Test
-    fun testCharArray2() {
-        overload(CharArray(0), 1)
-    }
-
-}
-
-fun overload(charSequence: CharSequence?, i:Int) {
-    println("overload with CharSequence")
-}
-
-fun overload(vararg any: Any) {
-    println("overload with Any")
 }

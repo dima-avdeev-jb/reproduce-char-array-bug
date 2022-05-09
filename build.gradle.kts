@@ -20,6 +20,11 @@ kotlin {
         isMingwX64 -> mingwX64("native")
         else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
     }
+//    js() {
+//        nodejs {
+//            useCommonJs()
+//        }
+//    }
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
