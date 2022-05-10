@@ -14,7 +14,7 @@ kotlin.AssertionError: Expected `a`, actual `kotlin.CharArray@69ba8801`
 1) Java class StringBuilder have function:
 ```java
     @Override
-    public StringBuilder append(**char[] str**, int offset, int len) {
+    public StringBuilder append(char[] str, int offset, int len) {
         super.append(str, offset, len);
         return this;
     }
