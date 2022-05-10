@@ -10,20 +10,20 @@ stringBuilder.append(charArray, 0, 1)
 ### fail logs:
 kotlin.AssertionError: Expected `a`, actual `kotlin.CharArray@69ba8801`  
 
-### My point on view
-1) expect class StringBuilder have function:
-```kotlin
-expect class StringBuilder {
-    fun append(value: CharSequence?, startIndex: Int, endIndex: Int): StringBuilder {
-    //...
+### My point of view
+1) Java class StringBuilder have function:
+```java
+    @Override
+    public StringBuilder append(**char[] str**, int offset, int len) {
+        super.append(str, offset, len);
+        return this;
+    }
 ```
-2) And extension function:
+2) And kotlin have extension function:
 ```kotlin
-fun StringBuilder.append(vararg value: Any?): StringBuilder
+    fun StringBuilder.append(vararg value: Any?): StringBuilder
 ```
-I think there are problems with kotlin jvm compiler  
-CharArray is not a CharSequence  
-But ```stringBuilder.append(charArray, 0, 1)``` uses ```fun append(value: CharSequence?, Int, Int)```  
+Jvm compiler take first function from Java  
 So, we have unpredictable behaviour, and it **differs on JVM and Native compiler**.
 
 ### Possible solution
