@@ -23,7 +23,8 @@ kotlin.AssertionError: Expected `a`, actual `kotlin.CharArray@69ba8801`
 ```kotlin
     fun StringBuilder.append(vararg value: Any?): StringBuilder
 ```
-Jvm compiler take first function from Java  
+Jvm Kotlin compiler take first function from Java  
+Native Kotlin compiler  
 So, we have unpredictable behaviour, and it **differs on JVM and Native compiler**.
 
 ### Possible solution
