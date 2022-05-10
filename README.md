@@ -32,9 +32,8 @@ So, we have unpredictable behaviour, and it **differs on JVM and Native compiler
 (like [androidx Compose](https://github.com/JetBrains/androidx/blob/4f18b0bddfaf20f4f2cea2b61248cebcf0afc3be/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/input/GapBuffer.kt#L191))   
 But, we can create another extension function:  
 ```kotlin
-public fun StringBuilder.append(charArray: CharArray, offset: Int, len:Int): StringBuilder {
-    // implement code, that will work same on JVM, Native, JS, WASM
-}
+expect fun StringBuilder.append(charArray: CharArray, offset: Int, len:Int): StringBuilder
+    // implement actual code, that will work same on JVM, Native, JS, WASM
 ```
 So, after it, this code will work the same way on all platforms, and we don't need to change JVM behaviour
 
