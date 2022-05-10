@@ -26,7 +26,7 @@ CharArray is not a CharSequence
 But ```stringBuilder.append(charArray, 0, 1)``` uses ```fun append(value: CharSequence?, Int, Int)```  
 So, we have unpredictable behaviour, and it **differs on JVM and Native compiler**.
 
-### My solution
+### Possible solution
 **It's hard to change JVM behaviour, because some project's already use it!**
 (like [androidx Compose](https://github.com/JetBrains/androidx/blob/4f18b0bddfaf20f4f2cea2b61248cebcf0afc3be/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/input/GapBuffer.kt#L191))   
 But, we can create another extension function:  
