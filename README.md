@@ -19,12 +19,12 @@ kotlin.AssertionError: Expected `a`, actual `kotlin.CharArray@69ba8801`
         return this;
     }
 ```
-2) And kotlin have extension function:
+2) And kotlin have extension function in kotlin-stdlib:
 ```kotlin
     fun StringBuilder.append(vararg value: Any?): StringBuilder
 ```
-Jvm Kotlin compiler take first function from Java  
-Native Kotlin compiler  
+Jvm Kotlin compiler takes first function from Java  
+Native Kotlin compiler takes second extension function from kotlin-stdlib  
 So, we have unpredictable behaviour, and it **differs on JVM and Native compiler**.
 
 ### Possible solution
